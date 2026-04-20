@@ -40,8 +40,8 @@ const FavoritesPage = () => {
                     <div className="favorites-empty">
                         <div className="favorites-empty-icon">Lock</div>
                         <h2>Your shortlist needs an account</h2>
-                        <p>Pa login, pronat nuk ruhen. Hyr që favorites të ruhen në SQLite dhe të të dalin prapë kur kthehesh.</p>
-                        <button className="btn btn-primary" onClick={() => openAuthModal('Bëj login që të shohësh dhe ruash Favorites.')}>
+                        <p>Sign in to save favorites in SQLite and keep them available when you come back.</p>
+                        <button className="btn btn-primary" onClick={() => openAuthModal('Sign in to view and save Favorites.')}>
                             Sign In
                         </button>
                     </div>

@@ -56,7 +56,7 @@ const AuthModal = () => {
     // Email format validation
     const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
     if (!emailRegex.test(formData.email)) {
-      setError('Ju lutem vendosni një email të saktë.')
+      setError('Please enter a valid email address.')
       setSubmitting(false)
       return
     }
@@ -73,7 +73,7 @@ const AuthModal = () => {
       }
     } else {
       if (!formData.name.trim()) {
-        setError('Ju lutem vendosni emrin tuaj')
+        setError('Please enter your full name.')
         setSubmitting(false)
         return
       }
@@ -84,7 +84,7 @@ const AuthModal = () => {
       const isLongEnough = formData.password.length >= 8
 
       if (!isLongEnough || !hasUppercase || !hasSymbol) {
-        setError('Fjalëkalimi duhet të ketë 8+ karaktere, një shkronjë të madhe dhe një simbol.')
+        setError('Password must be at least 8 characters and include one uppercase letter and one symbol.')
         setSubmitting(false)
         return
       }
@@ -106,7 +106,7 @@ const AuthModal = () => {
       return
     }
 
-    setError(result.error || 'Diçka shkoi gabim. Ju lutem provoni përsëri.')
+    setError(result.error || 'Something went wrong. Please try again.')
   }
 
   const handleChange = (event) => {
@@ -131,12 +131,12 @@ const AuthModal = () => {
         </button>
 
         <h2 className="auth-modal-title">
-          {step === 'verify' ? 'Verifikoni Email-in' : (isSignIn ? 'Mirësevini përsëri' : 'Bashkohuni me EstateX')}
+          {step === 'verify' ? 'Verify Your Email' : (isSignIn ? 'Welcome Back' : 'Join EstateX')}
         </h2>
         <p className="auth-modal-subtitle">
           {step === 'verify' 
-            ? `Kemi dërguar një kod 6-shifror në ${verificationEmail}` 
-            : (authModalMessage || (isSignIn ? 'Hyni në llogarinë tuaj' : 'Krijoni llogarinë tuaj sot'))}
+            ? `We sent a 6-digit code to ${verificationEmail}` 
+            : (authModalMessage || (isSignIn ? 'Sign in to your account' : 'Create your account today'))}
         </p>
 
         {error && <div className="auth-error">{error}</div>}
@@ -144,7 +144,7 @@ const AuthModal = () => {
         <form onSubmit={handleSubmit} className="auth-form">
           {step === 'verify' ? (
             <div className="form-group">
-              <label className="form-label">Kodi i Verifikimit</label>
+              <label className="form-label">Verification Code</label>
               <input
                 type="text"
                 className="form-input"
@@ -160,7 +160,7 @@ const AuthModal = () => {
             <>
               {!isSignIn && (
                 <div className="form-group">
-                  <label className="form-label">Emri i Plotë</label>
+                  <label className="form-label">Full Name</label>
                   <input
                     type="text"
                     name="name"
@@ -168,13 +168,13 @@ const AuthModal = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required={!isSignIn}
-                    placeholder="Emër Mbiemër"
+                    placeholder="First Last"
                   />
                 </div>
               )}
 
               <div className="form-group">
-                <label className="form-label">Adresa Email</label>
+                <label className="form-label">Email Address</label>
                 <input
                   type="email"
                   name="email"
@@ -187,7 +187,7 @@ const AuthModal = () => {
               </div>
 
               <div className="form-group">
-                <label className="form-label">Fjalëkalimi</label>
+                <label className="form-label">Password</label>
                 <input
                   type="password"
                   name="password"
@@ -200,7 +200,7 @@ const AuthModal = () => {
                 />
                 {!isSignIn && (
                   <p className="password-hint">
-                    Min. 8 karaktere, 1 shkronjë e madhe, 1 simbol
+                    Min. 8 characters, 1 uppercase letter, 1 symbol
                   </p>
                 )}
               </div>
@@ -214,24 +214,24 @@ const AuthModal = () => {
             disabled={submitting}
           >
             {submitting
-              ? (step === 'verify' ? 'Duke Verifikuar...' : (isSignIn ? 'Duke Hyrë...' : 'Duke Krijuar...'))
-              : (step === 'verify' ? 'Verifiko' : (isSignIn ? 'Hyr' : 'Regjistrohu'))}
+              ? (step === 'verify' ? 'Verifying...' : (isSignIn ? 'Signing In...' : 'Creating Account...'))
+              : (step === 'verify' ? 'Verify' : (isSignIn ? 'Sign In' : 'Register'))}
           </button>
         </form>
 
         <div className="auth-toggle">
           {step === 'verify' ? (
             <p>
-              Nuk erdhi kodi?{' '}
+              Did not receive the code?{' '}
               <span onClick={() => setStep('auth')} style={{ cursor: 'pointer', color: 'var(--secondary)', fontWeight: 600 }}>
-                Provo përsëri
+                Try again
               </span>
             </p>
           ) : (
             <p>
-              {isSignIn ? "Nuk keni llogari? " : 'Keni llogari? '}
+              {isSignIn ? "Don't have an account? " : 'Already have an account? '}
               <span onClick={toggleMode} style={{ cursor: 'pointer', color: 'var(--secondary)', fontWeight: 600 }}>
-                {isSignIn ? 'Regjistrohu' : 'Hyr'}
+                {isSignIn ? 'Register' : 'Sign In'}
               </span>
             </p>
           )}

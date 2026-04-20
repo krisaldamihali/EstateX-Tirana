@@ -29,7 +29,7 @@ const ComparePage = () => {
                 <section className="section compare-empty">
                     <h2 className="section-title">Property Comparison</h2>
                     <p className="section-subtitle">Sign in first to keep your comparison list synced in the database.</p>
-                    <button className="btn btn-primary" onClick={() => openAuthModal('Bëj login që të përdorësh Compare.')}>
+                    <button className="btn btn-primary" onClick={() => openAuthModal('Sign in to use Compare.')}>
                         Sign In
                     </button>
                 </section>

@@ -85,7 +85,7 @@ export const FavoritesProvider = ({ children }) => {
   }, [user, openAuthModal])
 
   const toggleFavorite = useCallback(async (property) => {
-    if (!requireUser('Bëj login që të ruash pronat te Favorites.')) {
+    if (!requireUser('Sign in to save properties to Favorites.')) {
       return { success: false, requiresAuth: true }
     }
 
@@ -111,7 +111,7 @@ export const FavoritesProvider = ({ children }) => {
       return { success: false, error: 'You can compare up to 4 properties at a time.' }
     }
 
-    if (!requireUser('Bëj login që të shtosh prona te Compare.')) {
+    if (!requireUser('Sign in to add properties to Compare.')) {
       return { success: false, requiresAuth: true }
     }
 
@@ -132,7 +132,7 @@ export const FavoritesProvider = ({ children }) => {
   const isInCompare = useCallback((id) => compareList.some((property) => property.id === id), [compareList])
 
   const clearCompare = useCallback(async () => {
-    if (!requireUser('Bëj login që të menaxhosh listën Compare.')) {
+    if (!requireUser('Sign in to manage your Compare list.')) {
       return { success: false, requiresAuth: true }
     }
 
