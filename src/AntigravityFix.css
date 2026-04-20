@@ -1,0 +1,299 @@
+/* ============================================================
+   ESTATEX ELITE - PREMIUM FROSTY CRYSTAL UI
+   ============================================================ */
+
+/* 1. Global Glass Infrastructure */
+:root {
+  --ag-primary: #16425B;
+  --ag-secondary: #C5A059;
+  --ag-glass-bg: rgba(255, 255, 255, 0.4);
+  --ag-glass-border: rgba(255, 255, 255, 0.6);
+  --ag-glow: rgba(58, 117, 150, 0.2);
+}
+
+body {
+  background: #f8fbff !important;
+  color: var(--ag-primary) !important;
+  font-family: 'Outfit', sans-serif !important;
+}
+
+main, section, .section {
+  background-color: transparent !important;
+}
+
+/* 2. Animated Fluid Background */
+.app-shell {
+  background: linear-gradient(135deg, #f8fbff 0%, #e0f2fe 50%, #fef3c7 100%) !important;
+  background-size: 400% 400% !important;
+  animation: fluidFlow 20s ease infinite !important;
+  min-height: 100vh !important;
+  position: relative !important;
+}
+
+@keyframes fluidFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.crystal-particles {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.72;
+  mix-blend-mode: multiply;
+}
+
+.navbar,
+.hero,
+.stats-bar,
+.section,
+.service-hero,
+.service-content,
+.contact-split-container,
+.footer {
+  position: relative;
+  z-index: 2;
+}
+
+.ag-blobs-container,
+.ag-noise {
+  z-index: -1 !important;
+}
+
+/* 3. Hero Section - Dynamic Video Immersion */
+.hero {
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  background: #05070d !important; /* Dark fallback while the video loads */
+}
+
+.hero::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(180deg, rgba(5, 7, 13, 0.32) 0%, rgba(5, 7, 13, 0.64) 100%),
+    radial-gradient(circle at center, rgba(58, 117, 150, 0.16), rgba(5, 7, 13, 0.42) 58%) !important;
+}
+
+.hero-video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  z-index: 0 !important;
+  opacity: 0.95 !important;
+  filter: saturate(1.08) contrast(1.08) !important;
+}
+
+.hero-content {
+  background: rgba(8, 12, 22, 0.38) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  padding: 5rem !important;
+  border-radius: 40px !important;
+  max-width: 950px !important;
+  text-align: center !important;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.hero-title {
+  font-size: 5rem !important;
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 900 !important;
+  line-height: 1.1 !important;
+  color: #ffffff !important; /* White for better video contrast */
+  margin-bottom: 2rem !important;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  max-width: 700px !important;
+  margin: 0 auto 3.5rem !important;
+  line-height: 1.6 !important;
+  text-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+}
+
+/* 4. Stats Bar - Gold & Navy Premium */
+.stats-bar {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(10px) !important;
+  width: min(calc(100% - 2rem), 1320px) !important;
+  margin: 3.5rem auto 0 !important;
+  padding: 3rem 0 !important;
+  border-radius: 32px !important;
+  border-top: 1px solid rgba(197, 160, 89, 0.2) !important;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2) !important;
+}
+
+.stat-number {
+  color: #C5A059 !important;
+  font-size: 2.8rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -1px !important;
+}
+
+.stat-text {
+  color: #16425B !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+
+/* 5. Contact Page - High Visibility Fix */
+.contact-left-panel {
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(30px) !important;
+  color: var(--ag-primary) !important;
+  padding-top: 120px !important;
+}
+
+.contact-method-label {
+  color: #C5A059 !important;
+  font-weight: 700 !important;
+}
+
+.contact-method-value {
+  color: var(--ag-primary) !important;
+  font-weight: 800 !important;
+}
+
+.contact-method-note {
+  color: #488FB1 !important;
+}
+
+/* 6. Listings Header - Modern Contrast */
+.search-hero {
+  background: linear-gradient(135deg, #112D3E 0%, #16425B 100%) !important;
+  border-radius: 30px !important;
+  margin: 2rem !important;
+  padding: 4rem 2rem !important ;
+}
+
+.search-hero-bar {
+  background: white !important;
+  border-radius: 15px !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.results-count {
+  background: rgba(255, 255, 255, 0.5) !important;
+  border-left: 5px solid var(--ag-primary) !important;
+  color: var(--ag-primary) !important;
+  border-radius: 12px !important;
+  padding: 1rem 2rem !important;
+}
+
+/* 7. Navigation Premium */
+.navbar {
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid rgba(22, 66, 91, 0.12) !important;
+  box-shadow: 0 14px 34px rgba(5, 7, 13, 0.12) !important;
+}
+
+.nav-link {
+  color: #16425B !important;
+  font-weight: 700 !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #3A7596 !important;
+}
+
+.nav-link::after {
+  background: #3A7596 !important;
+}
+
+.mobile-menu {
+  background: #ffffff !important;
+  border-top: 1px solid rgba(22, 66, 91, 0.12) !important;
+}
+
+/* 8. Property Badges + Card Actions */
+.property-badges .property-tag,
+.comp-card-badges .comp-card-tag {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  left: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  z-index: auto !important;
+}
+
+.card-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+  top: 1rem !important;
+  right: 1rem !important;
+}
+
+.card-action-btn {
+  width: 3rem !important;
+  height: 3rem !important;
+  flex: 0 0 3rem !important;
+  margin: 0 !important;
+  border-radius: 50% !important;
+  transform: none !important;
+}
+
+.card-action-btn:hover {
+  transform: translateY(-2px) !important;
+}
+
+.card-action-btn.compared,
+.gallery-action-btn.compared {
+  background: #16425B !important;
+  color: #ffffff !important;
+  border-color: #16425B !important;
+  box-shadow: 0 5px 15px rgba(22, 66, 91, 0.4) !important;
+  transform: none !important;
+}
+
+.card-action-btn.compared:hover,
+.gallery-action-btn.compared:hover {
+  transform: translateY(-2px) !important;
+}
+
+.card-action-btn.compared i,
+.gallery-action-btn.compared i {
+  color: #ffffff !important;
+}
+
+/* 9. Footer Links - Always Gold */
+.footer-link,
+.footer-link:visited,
+.footer-link:active {
+  color: #C5A059 !important;
+  background: rgba(197, 160, 89, 0.12) !important;
+  border-color: rgba(197, 160, 89, 0.34) !important;
+  font-weight: 800 !important;
+}
+
+.footer-link:hover {
+  color: #8B6A2E !important;
+  background: rgba(197, 160, 89, 0.2) !important;
+  border-color: rgba(197, 160, 89, 0.52) !important;
+}
