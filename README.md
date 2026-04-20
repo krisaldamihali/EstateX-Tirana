@@ -1,4 +1,4 @@
-﻿# EstateX Tirana
+﻿# EstateX-Tirana
 
 EstateX Tirana is a full-stack real estate portfolio project for browsing, filtering, comparing, and valuing apartment listings in Tirana, Albania.
 
