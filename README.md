@@ -14,7 +14,7 @@ This public repository contains the application source code that is safe to show
 | ML Integration | Private trained model loaded locally when available |
 | Maps | OpenStreetMap tiles |
 
-## Public Repository Contents
+## Public Repository Contents.
 
 ```text
 EstateX-Tirana/
